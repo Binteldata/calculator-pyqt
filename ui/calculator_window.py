@@ -28,7 +28,7 @@ class CalculatorWindow(QMainWindow):
         # Add theme toggle button
         theme_layout = QHBoxLayout()
         self.theme_button = QPushButton("🌙")  # Moon emoji for dark mode
-        self.theme_button.setFixedSize(40, 40)
+        self.theme_button.setFixedSize(60, 60)
         self.theme_button.clicked.connect(self.toggle_theme)
         self.theme_button.setStyleSheet(CalculatorStyles.get_button_style('special'))
         theme_layout.addStretch()

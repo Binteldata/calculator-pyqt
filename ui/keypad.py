@@ -39,4 +39,6 @@ class Keypad(QGridLayout):
             self.addWidget(button, row, col, 1, span)
     
     def get_button_style(self, style_type):
+        # Call the class method get_button_style from CalculatorStyles
+        # to retrieve the style for the specified type of button.
         return CalculatorStyles.get_button_style(style_type)
