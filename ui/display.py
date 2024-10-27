@@ -1,6 +1,7 @@
 # ui/display.py
 from PyQt6.QtWidgets import QLineEdit
 from PyQt6.QtCore import Qt
+from .styles import CalculatorStyles  # Import our new styles
 
 class Display(QLineEdit):
     def __init__(self):
@@ -12,12 +13,4 @@ class Display(QLineEdit):
         self.setAlignment(Qt.AlignmentFlag.AlignRight)
         self.setReadOnly(True)
         self.setText('0')
-        self.setStyleSheet("""
-            QLineEdit {
-                background-color: #333333;
-                color: white;
-                border: none;
-                font-size: 32px;
-                padding: 10px;
-            }
-        """)
+        self.setStyleSheet(CalculatorStyles.get_display_style())  # Use our new styles

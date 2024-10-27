@@ -1,6 +1,6 @@
-# ui/keypad.py
 from PyQt6.QtWidgets import QGridLayout, QPushButton
 from functools import partial
+from .styles import CalculatorStyles
 
 class Keypad(QGridLayout):
     def __init__(self, button_callback):
@@ -39,45 +39,4 @@ class Keypad(QGridLayout):
             self.addWidget(button, row, col, 1, span)
     
     def get_button_style(self, style_type):
-        styles = {
-            'number': """
-                QPushButton {
-                    background-color: #505050;
-                    color: white;
-                    font-size: 20px;
-                    border: none;
-                    border-radius: 25px;
-                    padding: 20px;
-                }
-                QPushButton:pressed {
-                    background-color: #666666;
-                }
-            """,
-            'operator': """
-                QPushButton {
-                    background-color: #FF9500;
-                    color: white;
-                    font-size: 20px;
-                    border: none;
-                    border-radius: 25px;
-                    padding: 20px;
-                }
-                QPushButton:pressed {
-                    background-color: #FFB143;
-                }
-            """,
-            'special': """
-                QPushButton {
-                    background-color: #404040;
-                    color: white;
-                    font-size: 20px;
-                    border: none;
-                    border-radius: 25px;
-                    padding: 20px;
-                }
-                QPushButton:pressed {
-                    background-color: #666666;
-                }
-            """
-        }
-        return styles[style_type]
+        return CalculatorStyles.get_button_style(style_type)
